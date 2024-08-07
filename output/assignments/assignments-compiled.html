@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="CSE105W24" />
+  <title>assignments-compiled</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">HW1CSE105W24: Homework assignment 1HW2CSE105W24:
+Homework assignment 2HW3CSE105W24: Homework assignment 3HW4CSE105W24:
+Homework assignment 4HW5CSE105W24: Homework assignment
+5ProjectCSE105W24: Project</h1>
+<p class="author">CSE105W24</p>
+<p class="date">Due: January 18th at 5pm (no penalty late submission
+until 8am next morning), via GradescopeDue: February 1st at 5pm (no
+penalty late submission until 8am next morning), via GradescopeDue:
+February 15th at 5pm (no penalty late submission until 8am next
+morning), via GradescopeDue: February 29th at 5pm (no penalty late
+submission until 8am next morning), via GradescopeDue: March 14 at 5pm
+(no penalty late submission until 8am next morning), via GradescopeDue
+February 22 at 5pm (no penalty late submission until 8am next day)</p>
+</header>
+<p><span><strong>In this assignment,</strong></span></p>
+<p>You will practice reading and applying the definitions of alphabets,
+strings, languages, Kleene star, and regular expressions. You will use
+regular expressions and relate them to languages and finite automata.
+You will use precise notation to formally define the state diagram of
+finite automata, and you will use clear English to describe computations
+of finite automata informally.</p>
+<p><span><strong>Resources</strong></span>: To review the topics for
+this assignment, see the class material from Week 1. We will post
+frequently asked questions and our answers to them in a pinned Piazza
+post.</p>
+<p><span><strong>Reading and extra practice problems</strong></span>:
+Sipser Section 0, 1.3, 1.1. Chapter 1 exercises 1.1, 1.2, 1.3, 1.18,
+1.23.</p>
+<p><span><strong>For all HW assignments:</strong></span> Weekly homework
+may be done individually or in groups of up to 3 students. You may
+switch HW partners for different HW assignments. Please ensure your
+name(s) and PID(s) are clearly visible on the first page of your
+homework submission and then upload the PDF to Gradescope. If working in
+a group, submit only one submission per group: one partner uploads the
+submission through their Gradescope account and then adds the other
+group member(s) to the Gradescope submission by selecting their name(s)
+in the “Add Group Members" dialog box. You will need to re-add your
+group member(s) every time you resubmit a new version of your
+assignment. Each homework question will be graded either for correctness
+(including clear and precise explanations and justifications of all
+answers) or fair effort completeness. For “graded for correctness”
+questions: collaboration is allowed only with CSE 105 students in your
+group; if your group has questions about a problem, you may ask in
+drop-in help hours or post a private post (visible only to the
+Instructors) on Piazza. For “graded for completeness” questions:
+collaboration is allowed with any CSE 105 students this quarter; if your
+group has questions about a problem, you may ask in drop-in help hours
+or post a public post on Piazza.</p>
+<p>All submitted homework for this class must be typed. You can use a
+word processing editor if you like (Microsoft Word, Open Office,
+Notepad, Vim, Google Docs, etc.) but you might find it useful to take
+this opportunity to learn LaTeX. LaTeX is a markup language used widely
+in computer science and mathematics. The homework assignments are typed
+using LaTeX and you can use the source files as templates for
+typesetting your solutions. To generate state diagrams of machines, we
+recommend using Flap.js or JFLAP. Photographs of clearly hand-drawn
+diagrams may also be used. We recommend that you submit early drafts to
+Gradescope so that in case of any technical difficulties, at least some
+of your work is present. You may update your submission as many times as
+you’d like up to the deadline.</p>
+<p><span><strong>Integrity reminders</strong></span></p>
+<ul>
+<li><p>Problems should be solved together, not divided up between the
+partners. The homework is designed to give you practice with the main
+concepts and techniques of the course, while getting to know and learn
+from your classmates.</p></li>
+<li><p>You may not collaborate on homework questions graded for
+correctness with anyone other than your group members. You may ask
+questions about the homework in office hours (of the instructor, TAs,
+and/or tutors) and on Piazza (as private notes viewable only to the
+Instructors). You <em>cannot</em> use any online resources about the
+course content other than the class material from this quarter – this is
+primarily to ensure that we all use consistent notation and definitions
+(aligned with the textbook) and also to protect the learning experience
+you will have when the ‘aha’ moments of solving the problem
+authentically happen.</p></li>
+<li><p>Do not share written solutions or partial solutions for homework
+with other students in the class who are not in your group. Doing so
+would dilute their learning experience and detract from their success in
+the class.</p></li>
+</ul>
+<p>You will submit this assignment via Gradescope (<a
+href="https://www.gradescope.com">https://www.gradescope.com</a>) in the
+assignment called “hw1CSE105W24”.</p>
+<p><span><strong>Assigned questions</strong></span></p>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+<strong>Finding examples and edge cases</strong> (12 points):</p>
+<p>With <span class="math inline">\(\Sigma_1 = \{0,1\}\)</span> and
+<span class="math inline">\(\Sigma_2 =
+\{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z\}\)</span> and
+<span class="math inline">\(\Gamma = \{0,1,x,y,z\}\)</span></p>
+<ol>
+<li><p>Give an example of the shortest string over <span
+class="math inline">\(\Sigma_1\)</span> that is meaningful to you in
+some way, and explain why it’s meaningful to you.</p></li>
+<li><p>List all examples of strings of length <span
+class="math inline">\(1\)</span> over <span
+class="math inline">\(\Sigma_2\)</span> and explain why your list is
+exhaustive.</p></li>
+<li><p>Calculate the number of distinct strings of length 3 over <span
+class="math inline">\(\Gamma\)</span> and explain your
+calculation.</p></li>
+<li><p>With the ordering <span class="math inline">\(x &lt; y &lt; z
+&lt; 0 &lt; 1\)</span>, list the first ten strings over <span
+class="math inline">\(\Gamma\)</span> in string order.</p></li>
+<li><p>Give an example of a finite set that is a language over <span
+class="math inline">\(\Sigma_1\)</span> and over <span
+class="math inline">\(\Sigma_2\)</span> and over <span
+class="math inline">\(\Gamma\)</span>, or explain why there is no such
+set.</p></li>
+<li><p>Give an example of an infinite set that is a language over <span
+class="math inline">\(\Sigma_1\)</span> and over <span
+class="math inline">\(\Gamma\)</span>, or explain why there is no such
+set.</p></li>
+</ol></li>
+<li><p>(<span><em>Graded for completeness</em></span>) <strong>Regular
+expressions</strong> (10 points):</p>
+<ol>
+<li><p>Give three regular expressions that all describe the set of all
+strings over <span class="math inline">\(\{a,b\}\)</span> that have even
+length. Ungraded bonus challenge: Make the expressions as different as
+possible!</p></li>
+<li><p>A friend tells you that each regular expression that has a Kleene
+star (<span class="math inline">\(~^*\)</span>) describes an infinite
+language. Are they right? Either help them justify their claim or give a
+counterexample to disprove it and then fix the formula.</p></li>
+</ol></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+<strong>Functions over languages</strong> (15 points):</p>
+<p>For languages <span class="math inline">\(L_1, L_2\)</span> over the
+alphabet <span class="math inline">\(\Sigma_1 = \{0,1\}\)</span>, we
+have the associated sets of strings <span
+class="math display">\[SUBSTRING(L_1) = \{ w \in \Sigma_1^* ~|~
+\text{there exist } a,b \in \Sigma_1^* \text{ such that } awb \in
+L_1\}\]</span> and <span class="math display">\[L_1 \circ L_2 = \{ w \in
+\Sigma_1^* ~|~ w = uv \text{ for some strings } u \in L_1 \text{ and } v
+\in L_2 \}\]</span></p>
+<ol>
+<li><p>Specify an example language <span
+class="math inline">\(A\)</span> over <span
+class="math inline">\(\Sigma_1\)</span> such that <span
+class="math inline">\(A \neq \emptyset\)</span> and yet <span
+class="math inline">\(\textsc{Substring}(A) = \emptyset\)</span>, or
+explain why there is no such example. A complete solution will include
+either (1) a precise and clear description of your example language
+<span class="math inline">\(A\)</span> and a precise and clear
+description of the result of computing <span
+class="math inline">\(\textsc{Substring}(A)\)</span> using relevant
+definitions to justify this description and to justify the set equality
+with <span class="math inline">\(\emptyset\)</span>, or (2) a
+sufficiently general and correct argument why there is no such example,
+referring back to the relevant definitions.</p></li>
+<li><p>Specify example languages <span class="math inline">\(B,
+C\)</span> over <span class="math inline">\(\Sigma_1\)</span> such that
+<span class="math inline">\(B \neq \Sigma_1^*\)</span> and <span
+class="math inline">\(C \neq \Sigma_1^*\)</span> and yet <span
+class="math inline">\(B \circ C = \Sigma_1^*\)</span>, or explain why
+there are no such examples. A complete solution will include either (1)
+a precise and clear description of your example languages <span
+class="math inline">\(B,C\)</span> and a precise and clear description
+of the result of computing <span class="math inline">\(B \circ
+C\)</span> using relevant definitions to justify this description and to
+justify the set equality with <span
+class="math inline">\(\Sigma_1^*\)</span>, or (2) a sufficiently general
+and correct argument why there is no such example, referring back to the
+relevant definitions.</p></li>
+<li><p>Specify example <span><strong>finite</strong></span> languages
+<span class="math inline">\(L_1, L_2\)</span> over <span
+class="math inline">\(\Sigma_1\)</span> such that <span
+class="math inline">\(L_1 \circ L_2 \neq L_1\)</span> but <span
+class="math inline">\(|L_1 \circ L_2| = |L_1|\)</span>, or explain why
+there are no such examples. A complete solution will include either (1)
+a precise and clear description of your example languages <span
+class="math inline">\(L_1, L_2\)</span> and a precise and clear
+description of the result of computing <span class="math inline">\(L_1
+\circ L_2\)</span> using relevant definitions to justify this
+description and to justify the cardinality claims and set (in)equality
+claims, or (2) a sufficiently general and correct argument why there is
+no such example, referring back to the relevant definitions.</p></li>
+</ol></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <strong>Finite
+automata</strong> (13 points):</p>
+<p>Consider the finite automaton <span class="math inline">\((Q, \Sigma,
+\delta, q_0, F)\)</span> whose state diagram is depicted below</p>
+<div class="center">
+
+</div>
+<p>where <span class="math inline">\(Q = \{q_0, q_1, q_2,
+q_3\}\)</span>, <span class="math inline">\(\Sigma = \{0,1\}\)</span>,
+and <span class="math inline">\(F = \{q_0\}\)</span>, and <span
+class="math inline">\(\delta: Q \times \Sigma \to Q\)</span> is
+specified by the look-up table</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><span
+class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(q_0\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(q_1\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_3\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(q_2\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_0\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_3\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\(q_3\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_3\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(q_3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li><p>A friend tries to summarize the transition function with the
+formula <span class="math display">\[\delta(q_i,x) = \begin{cases}
+            q_0 &amp;\text{ when $i=0$ and $x=1$} \\
+            q_3 &amp;\text{ when $0&lt;i\leq 3$ and $x=1$}\\
+            q_j &amp;\text{ when $j = (i+1) \mod 3$ and $x=0$}
+        \end{cases}\]</span> Are they right? Either help them justify
+their claim or give a counterexample to disprove it and then fix their
+formula.</p></li>
+<li><p>Give a regular expression <span class="math inline">\(R\)</span>
+so that <span class="math inline">\(L(R)\)</span> is the language
+recognized by this finite automaton. Justify your answer by referring to
+the definition of the semantics of regular expressions and computations
+of finite automata. Include an explanation for why each string in <span
+class="math inline">\(L(R)\)</span> is accepted by the finite automaton
+<span><em>and</em></span> for why each string not in <span
+class="math inline">\(L(R)\)</span> is rejected by the finite
+automaton.</p></li>
+<li><p>Keeping the same set of states <span class="math inline">\(Q =
+\{q_0, q_1, q_2, q_3\}\)</span>, alphabet <span
+class="math inline">\(\Sigma = \{0,1\}\)</span>, same start state <span
+class="math inline">\(q_0\)</span>, and same transition function <span
+class="math inline">\(\delta\)</span>, choose a new set of accepting
+states <span class="math inline">\(F_{new}\)</span> so that the new
+finite automaton that results accepts at least one string that the
+original one rejected <span><strong>and</strong></span> rejects at least
+one string that the original one accepted, or explain why there is no
+such choice of <span class="math inline">\(F_{new}\)</span>. A complete
+solution will include either (1) a precise and clear description of your
+choice of <span class="math inline">\(F_{new}\)</span> and a precise and
+clear the two example strings using relevant definitions to justify
+them, or (2) a sufficiently general and correct argument why there is no
+such example, referring back to the relevant definitions.</p></li>
+</ol></li>
+</ol>
+<p><span><strong>In this assignment,</strong></span></p>
+<p>You will practice designing multiple representations of regular
+languages and working with general constructions of automata to
+demonstrate the richness of the class of regular languages. You will
+also distinguish between regular and nonregular languages using both
+closure arguments and the pumping lemma.</p>
+<p><span><strong>Resources</strong></span>: To review the topics for
+this assignment, see the class material from Weeks 2-4. We will post
+frequently asked questions and our answers to them in a pinned Piazza
+post.</p>
+<p><span><strong>Reading and extra practice problems</strong></span>:
+Sipser Chapter 1, Section 2.2. Chapter 1 exercises 1.4, 1.5, 1.6, 1.7,
+1.8, 1.9, 1.10, 1.11, 1.12, 1.14, 1.15, 1.16, 1.17, 1.19, 1.20, 1.21,
+1.22, 1.29, 1.30. Chapter 1 problems 1.49, 1.50, 1.51.</p>
+<p><span><strong>For all HW assignments:</strong></span> Weekly homework
+may be done individually or in groups of up to 3 students. You may
+switch HW partners for different HW assignments. Please ensure your
+name(s) and PID(s) are clearly visible on the first page of your
+homework submission and then upload the PDF to Gradescope. If working in
+a group, submit only one submission per group: one partner uploads the
+submission through their Gradescope account and then adds the other
+group member(s) to the Gradescope submission by selecting their name(s)
+in the “Add Group Members" dialog box. You will need to re-add your
+group member(s) every time you resubmit a new version of your
+assignment. Each homework question will be graded either for correctness
+(including clear and precise explanations and justifications of all
+answers) or fair effort completeness. For “graded for correctness”
+questions: collaboration is allowed only with CSE 105 students in your
+group; if your group has questions about a problem, you may ask in
+drop-in help hours or post a private post (visible only to the
+Instructors) on Piazza. For “graded for completeness” questions:
+collaboration is allowed with any CSE 105 students this quarter; if your
+group has questions about a problem, you may ask in drop-in help hours
+or post a public post on Piazza.</p>
+<p>All submitted homework for this class must be typed. You can use a
+word processing editor if you like (Microsoft Word, Open Office,
+Notepad, Vim, Google Docs, etc.) but you might find it useful to take
+this opportunity to learn LaTeX. LaTeX is a markup language used widely
+in computer science and mathematics. The homework assignments are typed
+using LaTeX and you can use the source files as templates for
+typesetting your solutions. To generate state diagrams of machines, we
+recommend using Flap.js or JFLAP. Photographs of clearly hand-drawn
+diagrams may also be used. We recommend that you submit early drafts to
+Gradescope so that in case of any technical difficulties, at least some
+of your work is present. You may update your submission as many times as
+you’d like up to the deadline.</p>
+<p><span><strong>Integrity reminders</strong></span></p>
+<ul>
+<li><p>Problems should be solved together, not divided up between the
+partners. The homework is designed to give you practice with the main
+concepts and techniques of the course, while getting to know and learn
+from your classmates.</p></li>
+<li><p>You may not collaborate on homework questions graded for
+correctness with anyone other than your group members. You may ask
+questions about the homework in office hours (of the instructor, TAs,
+and/or tutors) and on Piazza (as private notes viewable only to the
+Instructors). You <em>cannot</em> use any online resources about the
+course content other than the class material from this quarter – this is
+primarily to ensure that we all use consistent notation and definitions
+(aligned with the textbook) and also to protect the learning experience
+you will have when the ‘aha’ moments of solving the problem
+authentically happen.</p></li>
+<li><p>Do not share written solutions or partial solutions for homework
+with other students in the class who are not in your group. Doing so
+would dilute their learning experience and detract from their success in
+the class.</p></li>
+</ul>
+<p>You will submit this assignment via Gradescope (<a
+href="https://www.gradescope.com">https://www.gradescope.com</a>) in the
+assignment called “hw2CSE105W24”.</p>
+<p><span><strong>Assigned questions</strong></span></p>
+<ol>
+<li><p><strong>Number representations</strong> (12 points): Integers can
+be represented using base <span class="math inline">\(b\)</span>
+expansions, for a convenient choice of base <span
+class="math inline">\(b\)</span>: for <span
+class="math inline">\(b\)</span> an integer greater than <span
+class="math inline">\(1\)</span> and <span
+class="math inline">\(n\)</span> a positive integer, the
+<span><strong>base <span class="math inline">\(b\)</span> expansion of
+<span class="math inline">\(n\)</span></strong></span> is defined to be
+<span class="math display">\[(a_{k-1} \cdots a_1 a_0)_b\]</span> where
+<span class="math inline">\(k\)</span> is a positive integer, <span
+class="math inline">\(a_0, a_1, \ldots, a_{k-1}\)</span> are nonnegative
+integers less than <span class="math inline">\(b\)</span>, <span
+class="math inline">\(a_{k-1} \neq  0\)</span>, and <span
+class="math display">\[n =  \sum_{i=0}^{k-1} a_{i} b^{i}\]</span></p>
+<p>Notice: <span><em>The base <span class="math inline">\(b\)</span>
+expansion of a positive integer <span class="math inline">\(n\)</span>
+is a string over the alphabet <span class="math inline">\(\{x \in
+\mathbb{Z} \mid 0 \leq x &lt; b\}\)</span> whose leftmost character is
+nonzero.</em></span></p>
+<p>An important property of base <span class="math inline">\(b\)</span>
+expansions of integers is that, for each integer <span
+class="math inline">\(b\)</span> greater than <span
+class="math inline">\(1\)</span>, each positive integer <span
+class="math inline">\(n = (a_{k-1} \cdots a_1 a_0)_b\)</span>, and each
+nonnegative integer <span class="math inline">\(a\)</span> less than
+<span class="math inline">\(b\)</span>, <span class="math display">\[bn
++ a = (a_{k-1} \cdots a_1 a_0a)_b\]</span> In other words, shifting the
+base <span class="math inline">\(b\)</span> expansion to the left
+results in multiplying the integer value by the base. In this question
+we’ll explore building deterministic finite automata that recognize
+languages that correspond to useful sets of integers.</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) <a href="#fn3"
+class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>
+Design a DFA that recognizes the set of binary (base <span
+class="math inline">\(2\)</span>) expansions of positive integers that
+are powers of <span class="math inline">\(2\)</span>. A complete
+solution will include the state diagram of your DFA and a brief
+justification of your construction by explaining the role each state
+plays in the machine, as well as a brief justification about how the
+strings accepted and rejected by the machine connect to the specified
+language.</p>
+<p><span><em>Hints</em></span>: (1) A power of <span
+class="math inline">\(2\)</span> is an integer <span
+class="math inline">\(x\)</span> that can be written as <span
+class="math inline">\(2^y\)</span> for some nonnegative integer <span
+class="math inline">\(y\)</span>, (2) the DFA should accept the strings
+<span class="math inline">\(100\)</span>, <span
+class="math inline">\(10\)</span> and <span
+class="math inline">\(100000\)</span> and should reject the strings
+<span class="math inline">\(010\)</span>, <span
+class="math inline">\(1101\)</span>, and <span
+class="math inline">\(\varepsilon\)</span> (can you see why?).</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) <a href="#fn4"
+class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
+Consider arbitrary positive integer <span
+class="math inline">\(m\)</span>. Design a DFA that recognizes the set
+of binary (base <span class="math inline">\(2\)</span>) expansions of
+positive integers that are multiples of <span
+class="math inline">\(m\)</span>. A complete solution will include the
+formal definition of your DFA (paramterized by <span
+class="math inline">\(m\)</span>) and a brief justification of your
+construction by explaining the role each state plays in the machine, as
+well as a brief justification about how the strings accepted and
+rejected by the machine connect to the specified language.</p>
+<p><span><em>Hints</em></span>: (1) Consider having a state for each
+possible remainder upon division by <span
+class="math inline">\(m\)</span>. (2) To determine transitions, notice
+that reading a new character will shift what we already read over by one
+slot.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) Choose a positive
+integer <span class="math inline">\(m_{0}\)</span> between <span
+class="math inline">\(4\)</span> and <span
+class="math inline">\(8\)</span> (inclusive) and draw the state diagram
+of a DFA recognizing the language over <span
+class="math inline">\(\{0,1,2\}\)</span> <span class="math display">\[\{
+w \in \{0,1,2\}^* \mid w \text{ is a base $3$ expansion of a positive
+    integer that is a multiple of $m_0$}\}\]</span> A complete solution
+will include the state diagram of your DFA and a brief justification of
+your construction by explaining the role each state plays in the
+machine, as well as a brief justification about how the strings accepted
+and rejected by the machine connect to the specified language.</p></li>
+</ol>
+<p><span><em>Bonus extension to think about (ungraded):</em></span>
+Which other languages related to sets of integers can be proved to be
+regular using a similar strategy?</p></li>
+<li><p><strong>Multiple representations</strong> (10 points): For any
+language <span class="math inline">\(L \subseteq \Sigma^*\)</span>,
+recall that we define its <em>complement</em> as <span
+class="math display">\[\overline{L} := \Sigma^* - L = \{w \in \Sigma^*
+\mid w \notin L\}\]</span> That is, the complement of <span
+class="math inline">\(L\)</span> contains all and only those strings
+which are not in <span class="math inline">\(L\)</span>. Our notation
+for regular expressions does not include the complement symbol. However,
+it turns out that the complement of a language described by a regular
+expression is guaranteed to also be describable by a (different) regular
+expression. For example, over the alphabet <span
+class="math inline">\(\Sigma = \{0,1\}\)</span>, the complement of the
+language described by the regular expression <span
+class="math inline">\(\Sigma^* 0\)</span> is described by the regular
+expression <span class="math inline">\(\varepsilon \cup
+\Sigma^*1\)</span> because any string that does not end in <span
+class="math inline">\(0\)</span> must either be the empty string or end
+in <span class="math inline">\(1\)</span>.</p>
+<p>For each of the regular expressions <span
+class="math inline">\(R\)</span> over the alphabet <span
+class="math inline">\(\Sigma = \{a,b\}\)</span> below, write the regular
+expression for <span class="math inline">\(\overline{L(R)}\)</span>.
+Your regular expressions may use the symbols <span
+class="math inline">\(\varnothing\)</span>, <span
+class="math inline">\(\varepsilon\)</span>, <span
+class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>, and the following operations to
+combine them: union, concatenation, and Kleene star.</p>
+<p>Briefly justify why your solution for each part works by giving plain
+English descriptions of the language described by the regular expression
+and of its complement and connecting them to the regular expression via
+relevant definitions. An English description that is more detailed than
+simply negating the description in the original language will likely be
+helpful in the justification.</p>
+<p>Alternatively, you can justify your solution by first designing a DFA
+that recognizes <span class="math inline">\(L(R)\)</span>, using the
+construction from class and the book to modify this DFA to get a new DFA
+that recognizes <span class="math inline">\(\overline{L(R)}\)</span>,
+and then applying the constructions from class and the book to convert
+this new DFA to a regular expression.</p>
+<p>For each part of the question, clearly state which approach you’re
+taking and include enough intermediate steps to illustrate your
+work.</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) <span
+class="math inline">\(a^*b^*\)</span></p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <span
+class="math inline">\((a \cup b) a b^*\)</span></p></li>
+</ol></li>
+<li><p><strong>Applying general constructions</strong> (12 points): In
+this question, you’ll practice working with formal general constructions
+for NFAs and translating between state diagrams and formal definitions.
+Consider the following general construction: Let <span
+class="math inline">\(N_1 = (Q, \Sigma, \delta_1, q_1, F_1)\)</span> be
+a NFA and assume that <span class="math inline">\(q_0 \notin Q\)</span>.
+Define the new NFA <span class="math inline">\(N_2 = (Q \cup \{q_0\},
+\Sigma, \delta_2, q_0, \{q_1\})\)</span> where <span
+class="math display">\[\delta_2: (Q \cup \{q_0\}) \times
+\Sigma_\varepsilon \to \mathcal{P} (Q \cup \{q_0\})\]</span> is defined
+by <span class="math display">\[\delta_2 (q,a) = \begin{cases}
+        \{ q&#39; \in Q \mid q \in \delta_1(q&#39;,a)\} &amp;\text{if $q
+\in Q$, $a \in \Sigma_{\varepsilon}$} \\
+        F_1 &amp;\text{if $q =q_0$, $a = \varepsilon$}\\
+        \emptyset &amp;\text{if $q = q_0$, $a \in \Sigma$}
+    \end{cases}\]</span></p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) Illustrate this
+construction by defining a specific example NFA <span
+class="math inline">\(N\)</span> and applying the construction above to
+create a new NFA. Your example NFA should</p>
+<ul>
+<li><p>Have exactly three states (all reachable from the start
+state),</p></li>
+<li><p>Have at least one spontaneous move (arrow labelled <span
+class="math inline">\(\varepsilon\)</span>),</p></li>
+<li><p>Accept at least one string and reject at least one string,
+and</p></li>
+<li><p>Not have any states labelled <span
+class="math inline">\(q_0\)</span>.</p></li>
+</ul>
+<p>Apply the construction above to create the new NFA. A complete
+submission will include the state diagram of your example NFA <span
+class="math inline">\(N\)</span> and the state diagram of the NFA
+resulting from this construction.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) Use Theorem 1.39
+on page 55 of the book (see also page 7 in Week 3 notes) to construct a
+DFA equivalent to your example NFA <span
+class="math inline">\(N\)</span> from part (a). A complete submission
+will include the state diagram of your example NFA <span
+class="math inline">\(N\)</span> and the state diagram of the DFA
+resulting from this construction, with the correct state labels for this
+DFA. You may prune the DFA so that only the “macro-states” reachable
+from the start state are included.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Explain the
+relationship between <span class="math inline">\(N_1\)</span> and <span
+class="math inline">\(N_2\)</span> in the general construction. Give an
+example string that is accepted by your example NFA <span
+class="math inline">\(N\)</span> and is rejected by the NFA that results
+from applying the general construction that illustrates this
+relationship, or explain why there is no such example string.</p></li>
+</ol></li>
+<li><p><strong>Pumping</strong> (8 points):</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) Give an example of
+a language over the alphabet <span
+class="math inline">\(\{0,1\}\)</span> that has cardinality <span
+class="math inline">\(3\)</span> and for which <span
+class="math inline">\(5\)</span> is a pumping length and <span
+class="math inline">\(4\)</span> is not a pumping length. A complete
+solution will give a clear and precise description of the language, a
+justification for why <span class="math inline">\(5\)</span> is a
+pumping length, and a justification for why <span
+class="math inline">\(4\)</span> is not a pumping length. Is this
+language regular?</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Consider the
+following attempted “proof" that the set <span class="math display">\[X
+= \{ uw \mid \text{$u$ and
+$w$ are strings over $\{0,1\}$ and have the same length} \}\]</span> is
+nonregular.</p>
+<blockquote>
+<p>“Proof" that <span class="math inline">\(X\)</span> is not regular
+using the Pumping Lemma: Let <span class="math inline">\(p\)</span> be
+an arbitrary positive integer. We will show that <span
+class="math inline">\(p\)</span> is not a pumping length for <span
+class="math inline">\(X\)</span>.</p>
+<p>Choose <span class="math inline">\(s\)</span> to be the string <span
+class="math inline">\(1^p 0^p\)</span>, which is in <span
+class="math inline">\(X\)</span> because we can choose <span
+class="math inline">\(u = 1^p\)</span> and <span class="math inline">\(w
+= 0^p\)</span> which each have length <span
+class="math inline">\(p\)</span>. Since <span
+class="math inline">\(s\)</span> is in <span
+class="math inline">\(X\)</span> and has length greater than or equal to
+<span class="math inline">\(p\)</span>, if <span
+class="math inline">\(p\)</span> were to be a pumping length for <span
+class="math inline">\(X\)</span>, <span class="math inline">\(s\)</span>
+ought to be pump’able. That is, there should be a way of dividing <span
+class="math inline">\(s\)</span> into parts <span
+class="math inline">\(x,y,z\)</span> where <span
+class="math inline">\(s=xyz\)</span>, <span class="math inline">\(|y|
+&gt;0\)</span>, <span class="math inline">\(|xy| \leq p\)</span>, and
+for each <span class="math inline">\(i \geq 0\)</span>, <span
+class="math inline">\(xy^iz \in X\)</span>. Suppose <span
+class="math inline">\(x,y,z\)</span> are such that <span
+class="math inline">\(s = xyz\)</span>, <span class="math inline">\(|y|
+&gt; 0\)</span> and <span class="math inline">\(|xy| \leq p\)</span>.
+Since the first <span class="math inline">\(p\)</span> letters of <span
+class="math inline">\(s\)</span> are all <span
+class="math inline">\(1\)</span> and <span class="math inline">\(|xy|
+\leq p\)</span>, we know that <span class="math inline">\(x\)</span> and
+<span class="math inline">\(y\)</span> are made up of all <span
+class="math inline">\(1\)</span>s. If we let <span
+class="math inline">\(i=2\)</span>, we get a string <span
+class="math inline">\(xy^iz\)</span> that is not in <span
+class="math inline">\(X\)</span> because repeating <span
+class="math inline">\(y\)</span> twice adds <span
+class="math inline">\(1\)</span>s to <span
+class="math inline">\(u\)</span> but not to <span
+class="math inline">\(w\)</span>, and strings in <span
+class="math inline">\(X\)</span> are required to have <span
+class="math inline">\(u\)</span> and <span
+class="math inline">\(w\)</span> be the same length. Thus, <span
+class="math inline">\(s\)</span> is not pumpable (even though it should
+have been if <span class="math inline">\(p\)</span> were to be a pumping
+length) and so <span class="math inline">\(p\)</span> is not a pumping
+length for <span class="math inline">\(X\)</span>. Since <span
+class="math inline">\(p\)</span> was arbitrary, we have demonstrated
+that <span class="math inline">\(X\)</span> has no pumping length. By
+the Pumping Lemma, this implies that <span
+class="math inline">\(X\)</span> is nonregular.</p>
+</blockquote>
+<p>Find the (first and/or most significant) logical error in the “proof"
+and describe why it’s wrong. Then, either prove that the set is actually
+regular (by finding a regular expression that describes it or a DFA/NFA
+that recognizes it, and justifying why) <span><strong>or</strong></span>
+fix the proof so that it is logically sound.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) In class and in
+the reading so far, we’ve seen the following examples of nonregular
+sets:</p>
+<div class="multicols">
+<p><span>3</span></p>
+<div class="center">
+<p><span class="math inline">\(\{ 0^n 1^n ~|~ n \geq 0 \}\)</span> <span
+class="math display">\[\{ 0^n 1^n ~|~ n \geq 2 \}\]</span> <span
+class="math display">\[\{ 0^n 1^m ~|~  0 \leq n \leq m \}\]</span> <span
+class="math display">\[\{ 0^n 1^m ~|~ 0 \leq m \leq n \}\]</span> <span
+class="math display">\[\{ 0^i 1^{2i} ~|~ 0 \leq i \}\]</span> <span
+class="math display">\[\{ 0^i 1^{i+1} ~|~ 0 \leq i \}\]</span> <span
+class="math display">\[\{ 0^n 1^m 0^n ~|~n,m \geq 0\}\]</span> <span
+class="math display">\[\{ w \in \{0,1\}^* ~|~w = w^R\}\]</span> <span
+class="math display">\[\{ w w^R ~|~ w \in \{0,1\}^*\}\]</span></p>
+</div>
+</div>
+<p>Modify one of these sets in some way and use the Pumping Lemma to
+prove that the resulting set is still nonregular.</p></li>
+</ol></li>
+<li><p><strong>Regular and nonregular languages</strong> (8 points): In
+Week 2’s review quiz, we saw the definition that a set <span
+class="math inline">\(X\)</span> is said to be <span><strong>closed
+under an operation</strong></span> if, for any elements in <span
+class="math inline">\(X\)</span>, applying to them gives an element in
+<span class="math inline">\(X\)</span>. For example, the set of integers
+is closed under multiplication because if we take any two integers,
+their product is also an integer .</p>
+<p>Prove or disprove each closure claim statement below about the class
+of regular languages and the class of nonregular languages. Your
+arguments may refer to theorems proved in the textbook and class, and if
+they do, should include specific page numbers and references (i.e. write
+out the claim that was proved in the book and/or class).</p>
+<p>Recall the definitions we have:</p>
+<p>For languages <span class="math inline">\(L_1, L_2\)</span> over the
+alphabet <span class="math inline">\(\Sigma_1 = \{0,1\}\)</span>, we
+have the associated sets of strings <span
+class="math display">\[SUBSTRING(L_1) = \{ w \in \Sigma_1^* ~|~
+\text{there exist } a,b \in \Sigma_1^* \text{ such that } awb \in
+L_1\}\]</span> and <span class="math display">\[L_1 \circ L_2 = \{ w \in
+\Sigma_1^* ~|~ w = uv \text{ for some strings } u \in L_1 \text{ and } v
+\in L_2 \}\]</span></p>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) The set of
+regular languages over <span class="math inline">\(\{0,1\}\)</span> is
+closed under set-wise concatenation.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) The set of
+nonregular languages over <span class="math inline">\(\{0,1\}\)</span>
+is closed under set-wise concatenation.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) The set of
+regular languages over <span class="math inline">\(\{0,1\}\)</span> is
+closed under the <span class="math inline">\(SUBSTRING\)</span>
+operation.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) The set of
+nonregular languages over <span class="math inline">\(\{0,1\}\)</span>
+is closed under the <span class="math inline">\(SUBSTRING\)</span>
+operation.</p></li>
+</ol></li>
+</ol>
+<p><span><strong>In this assignment,</strong></span></p>
+<p>You will practice with the definition of pushdown automata and
+context-free grammars and reason about regular and context-free
+languages. You will also practice analyzing and designing Turing
+machines.</p>
+<p><span><strong>Resources</strong></span>: To review the topics for
+this assignment, see the class material from Weeks 4-6. We will post
+frequently asked questions and our answers to them in a pinned Piazza
+post.</p>
+<p><span><strong>Reading and extra practice problems</strong></span>:
+Sipser Chapter 2, Section 3.1 Chapter 2 exercises 2.1, 2.2, 2.3, 2.4,
+2.5, 2.6, 2.7, 2.9, 2.10, 2.11, 2.12, 2.13, 2.16, 2.17. Chapter 3
+exercises 3.1, 3.2.</p>
+<p><span><strong>For all HW assignments:</strong></span> Weekly homework
+may be done individually or in groups of up to 3 students. You may
+switch HW partners for different HW assignments. Please ensure your
+name(s) and PID(s) are clearly visible on the first page of your
+homework submission and then upload the PDF to Gradescope. If working in
+a group, submit only one submission per group: one partner uploads the
+submission through their Gradescope account and then adds the other
+group member(s) to the Gradescope submission by selecting their name(s)
+in the “Add Group Members" dialog box. You will need to re-add your
+group member(s) every time you resubmit a new version of your
+assignment. Each homework question will be graded either for correctness
+(including clear and precise explanations and justifications of all
+answers) or fair effort completeness. For “graded for correctness”
+questions: collaboration is allowed only with CSE 105 students in your
+group; if your group has questions about a problem, you may ask in
+drop-in help hours or post a private post (visible only to the
+Instructors) on Piazza. For “graded for completeness” questions:
+collaboration is allowed with any CSE 105 students this quarter; if your
+group has questions about a problem, you may ask in drop-in help hours
+or post a public post on Piazza.</p>
+<p>All submitted homework for this class must be typed. You can use a
+word processing editor if you like (Microsoft Word, Open Office,
+Notepad, Vim, Google Docs, etc.) but you might find it useful to take
+this opportunity to learn LaTeX. LaTeX is a markup language used widely
+in computer science and mathematics. The homework assignments are typed
+using LaTeX and you can use the source files as templates for
+typesetting your solutions. To generate state diagrams of machines, we
+recommend using Flap.js or JFLAP. Photographs of clearly hand-drawn
+diagrams may also be used. We recommend that you submit early drafts to
+Gradescope so that in case of any technical difficulties, at least some
+of your work is present. You may update your submission as many times as
+you’d like up to the deadline.</p>
+<p><span><strong>Integrity reminders</strong></span></p>
+<ul>
+<li><p>Problems should be solved together, not divided up between the
+partners. The homework is designed to give you practice with the main
+concepts and techniques of the course, while getting to know and learn
+from your classmates.</p></li>
+<li><p>You may not collaborate on homework questions graded for
+correctness with anyone other than your group members. You may ask
+questions about the homework in office hours (of the instructor, TAs,
+and/or tutors) and on Piazza (as private notes viewable only to the
+Instructors). You <em>cannot</em> use any online resources about the
+course content other than the class material from this quarter – this is
+primarily to ensure that we all use consistent notation and definitions
+(aligned with the textbook) and also to protect the learning experience
+you will have when the ‘aha’ moments of solving the problem
+authentically happen.</p></li>
+<li><p>Do not share written solutions or partial solutions for homework
+with other students in the class who are not in your group. Doing so
+would dilute their learning experience and detract from their success in
+the class.</p></li>
+</ul>
+<p>You will submit this assignment via Gradescope (<a
+href="https://www.gradescope.com">https://www.gradescope.com</a>) in the
+assignment called “hw3CSE105W24”.</p>
+<p><span><strong>Assigned questions</strong></span></p>
+<ol>
+<li><p><strong>Constructions</strong> (18 points):</p>
+<p>Consider the push-down automata <span
+class="math inline">\(M_1\)</span> and <span
+class="math inline">\(M_2\)</span> over <span
+class="math inline">\(\{a,b\}\)</span> with stack alphabet <span
+class="math inline">\(\{a, b\}\)</span> whose state diagrams are</p>
+<div class="center">
+<div class="multicols">
+<p><span>2</span> State diagram for <span
+class="math inline">\(M_1\)</span></p>
+<p>State diagram for <span class="math inline">\(M_2\)</span></p>
+</div>
+</div>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) <a href="#fn5"
+class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>
+What is the language <span class="math inline">\(A_1\)</span> recognized
+by <span class="math inline">\(M_1\)</span> and what is the language
+<span class="math inline">\(A_2\)</span> recognized by <span
+class="math inline">\(M_2\)</span>? Include a sample string that is
+accepted and one that is rejected for each of these PDA. Justify these
+examples with sample accepting computations or with an explanation why
+there is no accepting computation.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <a href="#fn6"
+class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>
+Design CFGs <span class="math inline">\(G_1\)</span> and <span
+class="math inline">\(G_2\)</span> over <span
+class="math inline">\(\{a,b\}\)</span> so that <span
+class="math inline">\(L(G_1) = A_1\)</span> and <span
+class="math inline">\(L(G_2) = A_2\)</span>. A complete solution will
+include precise definitions for each of the parameters required to
+specify a CFG, as well as a brief explanation about why each string in
+<span class="math inline">\(A_i\)</span> can be derived in <span
+class="math inline">\(G_i\)</span> and each string not in <span
+class="math inline">\(A_i\)</span> cannot be derived in <span
+class="math inline">\(G_i\)</span> (for <span
+class="math inline">\(i=1,2\)</span>).</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Remember that the
+definition of set-wise concatenation is: for languages <span
+class="math inline">\(L_1, L_2\)</span> over the alphabet <span
+class="math inline">\(\Sigma\)</span>, we have the associated set of
+strings <span class="math display">\[L_1 \circ L_2 = \{ w \in \Sigma^*
+~|~ w = uv \text{ for some strings } u \in L_1 \text{ and } v \in L_2
+\}\]</span> In class (and in the review quiz) we learned that the class
+of context-free languages is closed under set-wise concatenation. The
+proof of this closure claim using CFGs uses the construction: given
+<span class="math inline">\(G_1 = ( V_1, \Sigma, R_1, S_1)\)</span> and
+<span class="math inline">\(G_2 = (V_2, \Sigma, R_2, S_2)\)</span> with
+<span class="math inline">\(V_1 \cap V_2 = \emptyset\)</span> and <span
+class="math inline">\(S_{new} \notin V_1 \cup V_2\)</span>, define a new
+CFG <span class="math display">\[G = (V_1 \cup V_2 \cup \{S_{new}\},
+\Sigma, R_1 \cup R_2 \cup \{S_{new} \to S_1 S_2\}, S_{new})\]</span>
+Apply this construction to your grammars from part (b) and give a sample
+derivation of a string in <span class="math inline">\(A_1 \circ
+A_2\)</span> in this resulting grammar.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) If we try to
+extrapolate the construction that we used to prove that the class of
+regular languages is closed under set-wise concategation, we would get
+the following construction for PDAs: Given <span
+class="math inline">\(M_1 = (Q_1, \Sigma, \Gamma_1, \delta_1, q_1,
+F_1)\)</span> and <span class="math inline">\(M_2 = (Q_2, \Sigma,
+\Gamma_2, \delta_2, q_2, F_2)\)</span> with <span
+class="math inline">\(Q_1 \cap Q_2 = \emptyset\)</span>, define <span
+class="math inline">\(Q = Q_1 \cup Q_2\)</span>, <span
+class="math inline">\(\Gamma = \Gamma_1 \cup \Gamma_2\)</span>, and
+<span class="math display">\[M = (Q, \Sigma, \Gamma, \delta, q_1,
+F_2)\]</span> with <span class="math inline">\(\delta: Q \times
+\Sigma_\varepsilon \times \Gamma_\varepsilon \to \mathcal{P}(Q \times
+\Gamma_\varepsilon)\)</span> given by <span
+class="math display">\[\delta( q,a,b) = \begin{cases}
+        \delta_1 (q,a,b) &amp;\text{if $q \in Q_1 \setminus F_1$, $a \in
+\Sigma_\varepsilon$, $b \in {\Gamma_1}_\varepsilon$} \\
+        \delta_2 (q,a,b) &amp;\text{if $q \in Q_2$, $a \in
+\Sigma_\varepsilon$, $b \in {\Gamma_2}_\varepsilon$} \\
+        \delta_1 (q,a,b) &amp;\text{if $q \in F_1$, $a \in \Sigma$ or
+$b\in \Gamma_1$}\\
+        \delta_1 (q,a,b) \cup \{ (q_2, \varepsilon)\} &amp;\text{if $q
+\in F_1$, $a =\varepsilon$, $b=\varepsilon$}\\
+        \emptyset &amp;\text{otherwise}
+    \end{cases}\]</span> Apply this construction to the machines <span
+class="math inline">\(M_1\)</span> and <span
+class="math inline">\(M_2\)</span> from part (a), and then use the
+resulting PDA to prove that <span><em>this</em></span> construction
+cannot be used to prove that the class of context-free languages is
+closed under set-wise concatenation. A complete solution will include
+(1) the state diagram of the machine <span
+class="math inline">\(M\)</span> that results from applying this
+construction to <span class="math inline">\(M_1\)</span> and <span
+class="math inline">\(M_2\)</span>, (2) an example of a string that is
+accepted by this PDA <span class="math inline">\(M\)</span> but that is
+<span><strong>not</strong></span> in the language <span
+class="math inline">\(A_1 \circ A_2\)</span> with a description of the
+computation that witnesses that this string is accepted by <span
+class="math inline">\(M\)</span> and an explanation of why this string
+is not in <span class="math inline">\(A_1 \circ A_2\)</span> by
+referring back to the definitions of <span
+class="math inline">\(A_1\)</span>, <span
+class="math inline">\(A_2\)</span>, and set-wise concatenation.</p></li>
+</ol></li>
+<li><p><strong>Regular languages are context-free</strong> (10
+points):</p>
+<p>Informally, we think of regular languages as potentially simpler than
+context-free languages. In this question, you’ll make this precise by
+showing that every regular language is context-free, in two ways.</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) When we first
+introduced PDAs we saw that any NFA can be transformed to a PDA by not
+using the stack of the PDA at all. Make this precise by completing the
+following construction: Given a NFA <span class="math inline">\(N = (Q,
+\Sigma, \delta_N, q_0, F)\)</span> we define a PDA <span
+class="math inline">\(M\)</span> with <span class="math inline">\(L(M) =
+L(N)\)</span> by choosing … A complete solution will have precise,
+correct definitions for each of the defining parameters of <span
+class="math inline">\(M\)</span>: the set of states, the input alphabet,
+the stack alphabet, the transition function, the start state, and the
+set of accept states. Be careful to use notation that matches the types
+of the objects involved.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) In the book on
+page 107, the top paragraph describes a procedure for converting DFA to
+CFGs:</p>
+<blockquote>
+<p>You can convert any DFA into an equivalent CFG as follows. Make a
+variable <span class="math inline">\(R_i\)</span> for each state <span
+class="math inline">\(q_i\)</span> of the DFA. Add the rule <span
+class="math inline">\(R_i \to aR_j\)</span> to the CFG if <span
+class="math inline">\(\delta(q_i,a) =q_j\)</span> is a transition in the
+DFA. Add the rule <span class="math inline">\(R_i\to
+\varepsilon\)</span> if <span class="math inline">\(q_i\)</span> is an
+accept state of the DFA. Make <span class="math inline">\(R_0\)</span>
+the start variable ofthe grammar, where <span
+class="math inline">\(q_0\)</span> is the start state of the machine.
+Verify on your own that the resulting CFG generates the same language
+that the DFA recognizes.</p>
+</blockquote>
+<p>Use this construction to get a context-free grammar generating the
+language <span class="math display">\[\{ w \in \{0,1\}^* \mid w \text{
+does not have $11$ as a substring}\}\]</span> by (1) designing a DFA
+that recognizes this language and then (2) applying the construction
+from the book to convert the DFA to an equivalent CFG. A complete
+submission will include the state diagram of the DFA, a brief
+justification of why it recognizes the language, and then the complete
+and precise definition of the CFG that results from applying the
+construction from the book to this DFA. <span><em>Ungraded bonus: take a
+sample string in the language and see how the computation of the DFA on
+this string translates to a derivation in your
+grammar.</em></span></p></li>
+</ol></li>
+<li><p><strong>Classifying languages</strong> (12 points): On page 4 of
+the week 4 notes, we have the following list of languages over the
+alphabet <span class="math inline">\(\{a,b\}\)</span></p>
+<div class="center">
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(\{a^nb^n
+\mid 0  \leq n  \leq 5 \}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{b^n a^n
+\mid  n  \geq 2\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{a^m b^n
+\mid  0 \leq m\leq n\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(\{a^m b^n
+\mid  m \geq n+3,  n \geq 0\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{b^m a^n
+\mid  m \geq 1, n \geq  3\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(\{ w  \in
+\{a,b\}^* \mid w = w^\mathcal{R} \}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\{
+ww^\mathcal{R} \mid w\in \{a,b\}^* \}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) Pick one of the
+regular languages and design a regular expression that describes it.
+Briefly justify your regular expression by connecting the subexpressions
+of it to the intended language and referencing relevant
+definitions.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Pick another one
+of the regular languages and design a DFA that recognizes it. Draw the
+state diagram of your DFA. Briefly justify your design by explaining the
+role each state plays in the machine, as well as a brief justification
+about how the strings accepted and rejected by the machine connect to
+the specified language.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Pick one of the
+nonregular languages and design a PDA that recognizes it. Draw the state
+diagram of your PDA. Briefly justify your design by explaining the role
+each state plays in the machine, as well as a brief justification about
+how the strings accepted and rejected by the machine connect to the
+specified language.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Pick one of the
+nonregular languages and write a CFG that generates it. Briefly justify
+your design by by demonstrating how derivations in the grammar relate to
+the intended language.</p></li>
+</ol></li>
+<li><p><strong>Turing machines</strong> (10 points): Consider the Turing
+machine <span class="math inline">\(T\)</span> over the input alphabet
+<span class="math inline">\(\Sigma = \{0,1\}\)</span> with the state
+diagram below (the tape alphabet is <span class="math inline">\(\Gamma =
+\{ 0,1,X,\square\}\)</span>). Convention: we do not include the node for
+the reject state <span class="math inline">\(qrej\)</span> and any
+missing transitions in the state diagram have value <span
+class="math inline">\((qrej,\square,R)\)</span></p>
+<div class="center">
+
+</div>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) Specify an example
+string <span class="math inline">\(w_1\)</span> of length <span
+class="math inline">\(4\)</span> over <span
+class="math inline">\(\Sigma\)</span> that is
+<span><strong>accepted</strong></span> by this Turing machine, or
+explain why there is no such example. A complete solution will include
+either (1) a precise and clear description of your example string and a
+precise and clear description of the accepting computation of the Turing
+machine on this string or (2) a sufficiently general and correct
+argument why there is no such example, referring back to the relevant
+definitions.</p>
+<p>To describe a computation of a Turing machine, include the contents
+of the tape, the state of the machine, and the location of the
+read/write head at each step in the computation.</p>
+<p><span><em>Hint:</em></span> In class we’ve drawn pictures to
+represent the configuration of the machine at each step in a
+computation. You may do so or you may choose to describe these
+configurations in words.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) Specify an example
+string <span class="math inline">\(w_2\)</span> of length <span
+class="math inline">\(3\)</span> over <span
+class="math inline">\(\Sigma\)</span> that is
+<span><strong>rejected</strong></span> by this Turing machine or explain
+why there is no such example. A complete solution will include either
+(1) a precise and clear description of your example string and a precise
+and clear description of the rejecting computation of the Turing machine
+on this string or (2) a sufficiently general and correct argument why
+there is no such example, referring back to the relevant
+definitions.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) Specify an example
+string <span class="math inline">\(w_3\)</span> of length <span
+class="math inline">\(2\)</span> over <span
+class="math inline">\(\Sigma\)</span> on which the computation of this
+Turing machine <span><strong>loops</strong></span> or explain why there
+is no such example. A complete solution will include either (1) a
+precise and clear description of your example string and a precise and
+clear description of the looping (non-halting) computation of the Turing
+machine on this string or (2) a sufficiently general and correct
+argument why there is no such example, referring back to the relevant
+definitions.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Write an
+implementation level description of the Turing machine <span
+class="math inline">\(T\)</span>.</p></li>
+</ol></li>
+</ol>
+<p><span><strong>In this assignment,</strong></span> You will practice
+analyzing, designing, and working with Turing machines. You will use
+general constructions and specific machines to explore the classes of
+recognizable and decidable languages. You will explore various ways to
+encode machines as strings so that computational problems can be
+recognized.</p>
+<p><span><strong>Resources</strong></span>: To review the topics for
+this assignment, see the class material from Weeks 5-7. We will post
+frequently asked questions and our answers to them in a pinned Piazza
+post.</p>
+<p><span><strong>Reading and extra practice problems</strong></span>:
+Sipser Sections 3.1, 3.3, 4.1 Chapter 3 exercises 3.1, 3.2, 3.5, 3.8.
+Chapter 4 exercises 4.1, 4.2, 4.3, 4.4, 4.5.</p>
+<p><span><strong>For all HW assignments:</strong></span> Weekly homework
+may be done individually or in groups of up to 3 students. You may
+switch HW partners for different HW assignments. Please ensure your
+name(s) and PID(s) are clearly visible on the first page of your
+homework submission and then upload the PDF to Gradescope. If working in
+a group, submit only one submission per group: one partner uploads the
+submission through their Gradescope account and then adds the other
+group member(s) to the Gradescope submission by selecting their name(s)
+in the “Add Group Members" dialog box. You will need to re-add your
+group member(s) every time you resubmit a new version of your
+assignment. Each homework question will be graded either for correctness
+(including clear and precise explanations and justifications of all
+answers) or fair effort completeness. For “graded for correctness”
+questions: collaboration is allowed only with CSE 105 students in your
+group; if your group has questions about a problem, you may ask in
+drop-in help hours or post a private post (visible only to the
+Instructors) on Piazza. For “graded for completeness” questions:
+collaboration is allowed with any CSE 105 students this quarter; if your
+group has questions about a problem, you may ask in drop-in help hours
+or post a public post on Piazza.</p>
+<p>All submitted homework for this class must be typed. You can use a
+word processing editor if you like (Microsoft Word, Open Office,
+Notepad, Vim, Google Docs, etc.) but you might find it useful to take
+this opportunity to learn LaTeX. LaTeX is a markup language used widely
+in computer science and mathematics. The homework assignments are typed
+using LaTeX and you can use the source files as templates for
+typesetting your solutions. To generate state diagrams of machines, we
+recommend using Flap.js or JFLAP. Photographs of clearly hand-drawn
+diagrams may also be used. We recommend that you submit early drafts to
+Gradescope so that in case of any technical difficulties, at least some
+of your work is present. You may update your submission as many times as
+you’d like up to the deadline.</p>
+<p><span><strong>Integrity reminders</strong></span></p>
+<ul>
+<li><p>Problems should be solved together, not divided up between the
+partners. The homework is designed to give you practice with the main
+concepts and techniques of the course, while getting to know and learn
+from your classmates.</p></li>
+<li><p>You may not collaborate on homework questions graded for
+correctness with anyone other than your group members. You may ask
+questions about the homework in office hours (of the instructor, TAs,
+and/or tutors) and on Piazza (as private notes viewable only to the
+Instructors). You <em>cannot</em> use any online resources about the
+course content other than the class material from this quarter – this is
+primarily to ensure that we all use consistent notation and definitions
+(aligned with the textbook) and also to protect the learning experience
+you will have when the ‘aha’ moments of solving the problem
+authentically happen.</p></li>
+<li><p>Do not share written solutions or partial solutions for homework
+with other students in the class who are not in your group. Doing so
+would dilute their learning experience and detract from their success in
+the class.</p></li>
+</ul>
+<p>You will submit this assignment via Gradescope (<a
+href="https://www.gradescope.com">https://www.gradescope.com</a>) in the
+assignment called “hw4CSE105W24”.</p>
+<p><span><strong>Assigned questions</strong></span></p>
+<ol>
+<li><p><strong>Classifying languages</strong> (10 points): Our first
+example of a more complicated Turing machine was of a Turing machine
+that recognized the language <span class="math inline">\(\{w \# w \mid w
+\in\{0,1\}^*\}\)</span>, which we know is not context-free. The language
+<span class="math display">\[\{0^n 1^n 2^n \mid n \geq 0\}\]</span> is
+also not context-free.</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) <a href="#fn7"
+class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>
+Give an implementation-level description of a Turing machine that
+recognizes this language.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) <a href="#fn8"
+class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>
+Draw a state diagram of the Turing machine you gave in part (a) and
+trace the computation of this Turing machine on the input <span
+class="math inline">\(012\)</span>. You may use all our usual
+conventions for state diagrams of Turing machines (we do not include the
+node for the reject state <span class="math inline">\(qrej\)</span> and
+any missing transitions in the state diagram have value <span
+class="math inline">\((qrej,\square,R)\)</span>; <span
+class="math inline">\(b \to R\)</span> label means <span
+class="math inline">\(b \to b, R\)</span> ).</p></li>
+</ol></li>
+<li><p><strong>Deciders, Recognizers, Decidability, and
+Recognizability</strong> (15 points): For this question, consider the
+alphabet <span class="math inline">\(\Sigma = \{0,1\}\)</span>.</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) Give an example of
+a finite, nonempty language over <span
+class="math inline">\(\Sigma\)</span> and two different Turing machines
+that recognize it: one that is a decider and one that is not. A complete
+solution will include a precise definition for your example language,
+along with <span><strong>both</strong></span> a state diagram and an
+implementation-level description of each Turing machines, along with a
+brief explanation of why each of them recognizes the language and why
+one is a decider and there other is not.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) True or false:
+There is a Turing machine that is not a decider that recognizes the
+empty set. A complete solution will include a witness Turing machine
+(given by state diagram or implementation-level description or
+high-level description) and a justification for why it’s not a decider
+and why it does not accept any strings, or a complete and correct
+justification for why there is no such Turing machine.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) True or false:
+There is a Turing machine that is not a decider that recognizes the set
+of all string <span class="math inline">\(\Sigma^*\)</span>. A complete
+solution will include a witness Turing machine (given by state diagram
+or implementation-level description or high-level description) and a
+justification for why it’s not a decider and why it accept each string
+over <span class="math inline">\(\{0,1\}\)</span>, or a complete and
+correct justification for why there is no such Turing machine.</p></li>
+</ol></li>
+<li><p><strong>Closure</strong> (15 points): Suppose <span
+class="math inline">\(M\)</span> is a Turing machine over the alphabet
+<span class="math inline">\(\{0,1\}\)</span>. Let <span
+class="math inline">\(s_1, s_2, \ldots\)</span> be a list of all strings
+in <span class="math inline">\(\{0,1\}^*\)</span> in string (shortlex)
+order. We define a new Turing machine by giving its high-level
+description as follows: <span class="math display">\[\begin{aligned}
+   M_{new} &amp;= ``\text{On input }w:\\
+    &amp;\text{1. For $n = 1, 2, \ldots$}\\
+    &amp;\text{2.~~~For $j = 1, 2, \ldots n$} \\
+    &amp;\text{3.~~~For $k = 1, 2, \ldots, n$} \\
+    &amp;\text{4.~~~~~~Run the computation of $M$ on $s_jws_k$}\\
+    &amp;\text{5.~~~~~~If it accepts, accept.}\\
+    &amp;\text{6.~~~~~~If it rejects, go to the next iteration of the
+loop&quot;}\\
+\end{aligned}\]</span></p>
+<p>Recall the definitions we have: For languages <span
+class="math inline">\(L_1, L_2\)</span> over the alphabet <span
+class="math inline">\(\Sigma = \{0,1\}\)</span>, we have the associated
+sets of strings <span class="math display">\[SUBSTRING(L_1) = \{ w \in
+\Sigma^* ~|~ \text{there exist } a,b \in \Sigma^* \text{ such that } awb
+\in L_1\}\]</span> and <span class="math display">\[L_1 \circ L_2 = \{ w
+\in \Sigma^* ~|~ w = uv \text{ for some strings } u \in L_1 \text{ and }
+v \in L_2 \}\]</span> We say that self-set-wise concatenation of the set
+<span class="math inline">\(L_1\)</span> is <span
+class="math inline">\(L_1 \circ L_1\)</span>.</p>
+<p><span><em>Note: there was a bug in the version of this assignment
+that was first released.</em></span></p>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) Prove that this
+Turing machine construction <span><strong>cannot</strong></span> be used
+to prove that the class of decidable languages over <span
+class="math inline">\(\{0,1\}\)</span> is closed under
+<span><strong>either</strong></span> of the above operations (<span
+class="math inline">\(SUBSTRING\)</span> or self-set-wise
+concatenation). A complete answer will give a counterexample or general
+description why the construction doesn’t work for both
+operations.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) Prove that this
+Turing machine construction cannot be used to prove that the class of
+recognizable languages over <span class="math inline">\(\{0,1\}\)</span>
+is closed under the <span class="math inline">\(SUBSTRING\)</span> set
+operation. In particular, give a counterexample of a specific language
+<span class="math inline">\(L_1\)</span> and Turing machine <span
+class="math inline">\(M_1\)</span> recognizing it where <span
+class="math inline">\(M_{new}\)</span> does not recognize <span
+class="math inline">\(SUBSTRING(L_1)\)</span>.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Define a new
+construction by slightly modifiying this one that can be used to prove
+that the class of recognizable languages over <span
+class="math inline">\(\{0,1\}\)</span> is closed under <span
+class="math inline">\(SUBSTRING\)</span>. Justify that your construction
+works. The proof of correctness for the closure claim can be structured
+like: “Let <span class="math inline">\(L_1\)</span> be a recognizable
+language over <span class="math inline">\(\{0,1\}\)</span> and assume we
+are given a Turing machine <span class="math inline">\(M_1\)</span> so
+that <span class="math inline">\(L(M_1) = L_1\)</span>. Consider the new
+Turing machine <span class="math inline">\(M_{new}\)</span> defined
+above. We will show that <span class="math inline">\(L(M_{new}) =
+SUBSTRING(L_1)\)</span>... <span><em>complete the proof by proving
+subset inclusion in two directions, by tracing the relevant Turing
+machine computations</em></span>”</p></li>
+</ol></li>
+<li><p><strong>Computational problems</strong> (10 points): Recall the
+definitions of some example computational problems from class</p>
+<table>
+<tbody>
+<tr>
+<td colspan="3" style="text-align: left;"><span><strong>Acceptance
+problem</strong></span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for DFA</td>
+<td style="text-align: center;"><span
+class="math inline">\(A_{DFA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle B,w
+\rangle \mid  \text{$B$ is a  DFA that accepts input
+    string $w$}\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for NFA</td>
+<td style="text-align: center;"><span
+class="math inline">\(A_{NFA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle B,w
+\rangle \mid  \text{$B$ is a  NFA that accepts input
+    string $w$}\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for regular expressions</td>
+<td style="text-align: center;"><span
+class="math inline">\(A_{REX}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle R,w
+\rangle \mid  \text{$R$ is a  regular
+    expression that generates input string $w$}\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for CFG</td>
+<td style="text-align: center;"><span
+class="math inline">\(A_{CFG}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle G,w
+\rangle \mid  \text{$G$ is a context-free grammar
+    that generates input string $w$}\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for PDA</td>
+<td style="text-align: center;"><span
+class="math inline">\(A_{PDA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle B,w
+\rangle \mid  \text{$B$ is a PDA that accepts input string
+$w$}\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><span><strong>Language
+emptiness testing</strong></span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for DFA</td>
+<td style="text-align: center;"><span
+class="math inline">\(E_{DFA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle A
+\rangle \mid  \text{$A$ is a  DFA and  $L(A) =
+\emptyset$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for NFA</td>
+<td style="text-align: center;"><span
+class="math inline">\(E_{NFA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle
+A\rangle \mid  \text{$A$ is a NFA and  $L(A) =
+\emptyset$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for regular expressions</td>
+<td style="text-align: center;"><span
+class="math inline">\(E_{REX}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle R
+\rangle \mid  \text{$R$ is a  regular
+    expression and  $L(R) = \emptyset$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for CFG</td>
+<td style="text-align: center;"><span
+class="math inline">\(E_{CFG}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle G
+\rangle \mid  \text{$G$ is a context-free grammar
+    and  $L(G) = \emptyset$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for PDA</td>
+<td style="text-align: center;"><span
+class="math inline">\(E_{PDA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle A
+\rangle \mid  \text{$A$ is a PDA and  $L(A) =
+\emptyset$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td colspan="3" style="text-align: left;"><span><strong>Language
+equality testing</strong></span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for DFA</td>
+<td style="text-align: center;"><span
+class="math inline">\(EQ_{DFA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle A,
+B \rangle \mid  \text{$A$ and $B$ are DFAs and  $L(A)
+=L(B)$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for NFA</td>
+<td style="text-align: center;"><span
+class="math inline">\(EQ_{NFA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle A,
+B \rangle \mid  \text{$A$ and $B$ are NFAs and  $L(A)
+=L(B)$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for regular expressions</td>
+<td style="text-align: center;"><span
+class="math inline">\(EQ_{REX}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle R,
+R&#39; \rangle \mid  \text{$R$ and $R&#39;$ are regular
+    expressions and  $L(R) =L(R&#39;)$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for CFG</td>
+<td style="text-align: center;"><span
+class="math inline">\(EQ_{CFG}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle G,
+G&#39; \rangle \mid  \text{$G$ and $G&#39;$ are CFGs and  $L(G)
+=L(G&#39;)$\}}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">…for PDA</td>
+<td style="text-align: center;"><span
+class="math inline">\(EQ_{PDA}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{ \langle A,
+B \rangle \mid  \text{$A$ and $B$ are PDAs and  $L(A)
+=L(B)$\}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) Pick five of the
+computational problems above and give examples (preferably different
+from the ones we talked about in class) of strings that are in each of
+the corresponding languages. Remember to use the notation <span
+class="math inline">\(\langle \cdots \rangle\)</span> to denote the
+string encoding of relevant objects. <span><em>Extension, not for
+credit:</em></span> Explain why it’s hard to write a specific string of
+<span class="math inline">\(0\)</span>s and <span
+class="math inline">\(1\)</span>s and make a claim about membership in
+one of these sets.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Computational
+problems can also be defined about Turing machines. Consider the two
+high-level descriptions of Turing machines below. Reverse-engineer them
+to define the computational problem that is being recognized, where
+<span class="math inline">\(L(M_{DFA})\)</span> is the language
+corresponding to this computational problem about DFA and <span
+class="math inline">\(L(M_{TM})\)</span> is the language corresponding
+to this computational problem about Turing machines.
+<span><em>Hint</em></span>: the computational problem is not acceptance,
+language emptiness, or language equality (but is related to one of
+them).</p>
+<p>Let <span class="math inline">\(s_1, s_2, \ldots\)</span> be a list
+of all strings in <span class="math inline">\(\{0,1\}^*\)</span> in
+string (shortlex) order. Consider the following Turing machines <span
+class="math display">\[\begin{aligned}
+        M_{DFA} &amp;= ``\text{On input $\langle D \rangle$ where $D$ is
+a DFA}:\\
+         &amp;\text{1. for $i=1, 2, 3, \ldots$} \\
+         &amp;\text{2.~~~ Run $D$ on $s_i$} \\
+         &amp;\text{3.~~~~If it accepts, accept.}\\
+         &amp;\text{4.~~~~If it rejects, go to the next iteration of the
+loop&quot;}\\
+     
+\end{aligned}\]</span> and <span class="math display">\[\begin{aligned}
+        M_{TM} &amp;= ``\text{On input $\langle T \rangle$ where $T$ is
+a Turing machine}:\\
+         &amp;\text{1. for $i=1, 2, 3, \ldots$} \\
+         &amp;\text{2.~~~ Run $T$ for $i$ steps on each input $s_1, s_2,
+\ldots, s_i$ in turn} \\
+         &amp;\text{3.~~~~If $T$ has accepted any of these, accept.}\\
+         &amp;\text{4.~~~~Otherwise, go to the next iteration of the
+loop&quot;}\\
+     
+\end{aligned}\]</span></p></li>
+</ol></li>
+</ol>
+<p><span><strong>In this assignment,</strong></span> You will practice
+analyzing, designing, and working with Turing machines. You will use
+general constructions and specific machines to explore the classes of
+recognizable and decidable languages. You will explore various ways to
+encode machines as strings so that computational problems can be
+recognized.</p>
+<p><span><strong>Resources</strong></span>: To review the topics for
+this assignment, see the class material from Weeks 7-10. We will post
+frequently asked questions and our answers to them in a pinned Piazza
+post.</p>
+<p><span><strong>Reading and extra practice problems</strong></span>:
+Sipser Sections 4.2, 5.3, 5.1. Chapter 4 problems 4.9, 4.12. Chapter 5
+exercises 5.4, 5.5, 5.6, 5.7. Chapter 5 problems 5.22, 5.23, 5.24,
+5.28</p>
+<p><span><strong>For all HW assignments:</strong></span> Weekly homework
+may be done individually or in groups of up to 3 students. You may
+switch HW partners for different HW assignments. Please ensure your
+name(s) and PID(s) are clearly visible on the first page of your
+homework submission and then upload the PDF to Gradescope. If working in
+a group, submit only one submission per group: one partner uploads the
+submission through their Gradescope account and then adds the other
+group member(s) to the Gradescope submission by selecting their name(s)
+in the “Add Group Members" dialog box. You will need to re-add your
+group member(s) every time you resubmit a new version of your
+assignment. Each homework question will be graded either for correctness
+(including clear and precise explanations and justifications of all
+answers) or fair effort completeness. For “graded for correctness”
+questions: collaboration is allowed only with CSE 105 students in your
+group; if your group has questions about a problem, you may ask in
+drop-in help hours or post a private post (visible only to the
+Instructors) on Piazza. For “graded for completeness” questions:
+collaboration is allowed with any CSE 105 students this quarter; if your
+group has questions about a problem, you may ask in drop-in help hours
+or post a public post on Piazza.</p>
+<p>All submitted homework for this class must be typed. You can use a
+word processing editor if you like (Microsoft Word, Open Office,
+Notepad, Vim, Google Docs, etc.) but you might find it useful to take
+this opportunity to learn LaTeX. LaTeX is a markup language used widely
+in computer science and mathematics. The homework assignments are typed
+using LaTeX and you can use the source files as templates for
+typesetting your solutions. To generate state diagrams of machines, we
+recommend using Flap.js or JFLAP. Photographs of clearly hand-drawn
+diagrams may also be used. We recommend that you submit early drafts to
+Gradescope so that in case of any technical difficulties, at least some
+of your work is present. You may update your submission as many times as
+you’d like up to the deadline.</p>
+<p><span><strong>Integrity reminders</strong></span></p>
+<ul>
+<li><p>Problems should be solved together, not divided up between the
+partners. The homework is designed to give you practice with the main
+concepts and techniques of the course, while getting to know and learn
+from your classmates.</p></li>
+<li><p>You may not collaborate on homework questions graded for
+correctness with anyone other than your group members. You may ask
+questions about the homework in office hours (of the instructor, TAs,
+and/or tutors) and on Piazza (as private notes viewable only to the
+Instructors). You <em>cannot</em> use any online resources about the
+course content other than the class material from this quarter – this is
+primarily to ensure that we all use consistent notation and definitions
+(aligned with the textbook) and also to protect the learning experience
+you will have when the ‘aha’ moments of solving the problem
+authentically happen.</p></li>
+<li><p>Do not share written solutions or partial solutions for homework
+with other students in the class who are not in your group. Doing so
+would dilute their learning experience and detract from their success in
+the class.</p></li>
+</ul>
+<p>You will submit this assignment via Gradescope (<a
+href="https://www.gradescope.com">https://www.gradescope.com</a>) in the
+assignment called “hw5CSE105W24”.</p>
+<p><span><strong>Assigned questions</strong></span></p>
+<ol>
+<li><p><strong>Computational problems</strong> (14 points): For each of
+the following statements, determine if it is true or false. Clearly
+label your choice by starting your solution with True or False and then
+provide a justification for your answer.</p>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) <a href="#fn9"
+class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>
+True or False: The language <span class="math display">\[\{\langle N_1,
+N_2 \rangle \mid N_1, N_2 \text{ are both NFAs over $\{0,1\}$
+    and } L(N_1) \subseteq L(N_2)\}\]</span> is recognizable.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <a href="#fn10"
+class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>
+True or False: The language <span class="math display">\[\{\langle D
+\rangle \mid D \text{ is a DFA over $\{0,1\}$ and } L(D) = L(0^*)
+\}\]</span> is decidable.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) True or False: The
+language <span class="math display">\[\{\langle M \rangle \mid M \text{
+is a Turing machine and its start state equals its reject state}
+\}\]</span> is decidable.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) True or False:
+The language <span class="math display">\[\{\langle M \rangle \mid M
+\text{ is a Turing machine and } L(M) = \emptyset \}\]</span> is
+decidable.</p></li>
+<li><p>Challenge; not graded: what’s the difference between (c) and
+(d)?</p></li>
+</ol></li>
+<li><p><strong>What’s wrong with these reductions?</strong> (13 points):
+Suppose your friends are practicing coming up with mapping reductions
+<span class="math inline">\(A \leq_m B\)</span> and their witnessing
+functions <span class="math inline">\(f: \Sigma^* \to \Sigma^*\)</span>.
+For each of the following attempts, determine if it is has error(s) or
+is correct. Do so by labelling each attempt with all and only the labels
+below that apply, and justifying this labelling.</p>
+<ul>
+<li><p><em>Error Type 1:</em> The given function can’t witness the
+claimed mapping reduction because there exists an <span
+class="math inline">\(x \in A\)</span> such that <span
+class="math inline">\(f(x) \not\in B\)</span>.</p></li>
+<li><p><em>Error Type 2:</em> The given function can’t witness the
+claimed mapping reduction because there exists an <span
+class="math inline">\(x \not\in A\)</span> such that <span
+class="math inline">\(f(x) \in B\)</span>.</p></li>
+<li><p><em>Error Type 3:</em> The given function can’t witness the
+claimed mapping reduction because the specified function is not
+computable.</p></li>
+<li><p><em>Correct:</em> The claimed mapping reduction is true and is
+witnessed by the given function.</p></li>
+</ul>
+<p>Clearly present your answer by providing a brief (3-4 sentences or
+so) justification for whether <span><strong>each</strong></span> of
+these labels applies to each example.</p>
+<ol>
+<li><p>(<span><em>Graded for completeness</em></span>) <span
+class="math inline">\(A_{\mathrm{TM}} \le_m HALT_{\mathrm{TM}}\)</span>
+and <span class="math display">\[f(x) = \begin{cases}
+\scalebox{.5}{$\langle$ \hspace{-.5cm} \raisebox{-.4cm}{
+\begin{tikzpicture}[-&gt;,&gt;=stealth&#39;,shorten &gt;=1pt, auto, node
+distance=2cm, semithick]
+  \tikzstyle{every state}=[text=black, fill=yellow!40]
+  \node[initial,state,accepting]
+(q0)                    {$q_{\mathrm{acc}}$};
+;
+\end{tikzpicture}}
+$\rangle$}  
+&amp; \text{if } x = \langle M, w \rangle \text{ for a Turing machine
+$M$ and string $w$}\\
+&amp; \qquad \qquad \text{ and } w \in L(M) \\
+
+\scalebox{.5}{$\langle$ \hspace{-.5cm} \raisebox{-.4cm}{
+\begin{tikzpicture}[-&gt;,&gt;=stealth&#39;,shorten &gt;=1pt, auto, node
+distance=2cm, semithick]
+  \tikzstyle{every state}=[text=black, fill=yellow!40]
+  \node[initial,state] (q0)                    {$q_0$};
+  \node[state,accepting] (qacc) [right of = q0, xshift = 20]{$q_{acc}$};
+  \path (q0) edge  [loop above] node {$0, 1,
+\scalebox{1.5}{\textvisiblespace}\to R$} (q0)
+;
+\end{tikzpicture}}
+$\rangle$}
+&amp; \text{otherwise}
+\end{cases}\]</span></p>
+<p><span><em>Hint:</em></span> There are two errors with this
+attempt.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <span
+class="math inline">\(\{ w \mid w \in \{0,1\}^* \} \le_m \{w w \mid w
+\in \{0,1\}^* \}\)</span> and <span class="math inline">\(f(x) =
+xx\)</span> for each <span class="math inline">\(x \in
+\{0,1\}^*\)</span>.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) <span
+class="math inline">\(HALT_{\mathrm{TM}} \le_m EQ_{\mathrm{TM}}\)</span>
+with <span class="math display">\[f(x) = \begin{cases}
+\scalebox{.7}{$\langle$ \hspace{-.5cm} \raisebox{-.4cm}{
+\begin{tikzpicture}[-&gt;,&gt;=stealth&#39;,shorten &gt;=1pt, auto, node
+distance=2cm, semithick]
+  \tikzstyle{every state}=[text=black, fill=yellow!40]
+  \node[initial,state,accepting]
+(q0)                    {$q_{\mathrm{acc}}$};
+;
+\end{tikzpicture}}
+, $M_w \rangle$}  &amp; \text{if } x = \langle M, w \rangle \text{ for a
+Turing machine $M$ and string $w$}\\\\
+\scalebox{.7}{$\langle$ \hspace{-.5cm} \raisebox{-.4cm}{
+    \begin{tikzpicture}[-&gt;,&gt;=stealth&#39;,shorten &gt;=1pt, auto,
+node distance=2cm, semithick]
+      \tikzstyle{every state}=[text=black, fill=yellow!40]
+      \node[initial,state,accepting]
+(q0)                    {$q_{\mathrm{acc}}$};
+     ;
+    \end{tikzpicture}}}
+    , ~~~
+    \scalebox{.7}{\hspace{-.5cm}
+\raisebox{-.4cm}{\begin{tikzpicture}[-&gt;,&gt;=stealth&#39;,shorten
+&gt;=1pt, auto, node distance=2cm, semithick]
+        \tikzstyle{every state}=[text=black, fill=yellow!40]
+        \node[initial,state]
+(qrej)                    {$q_{\mathrm{rej}}$};
+        \node[state,accepting] (qacc) [right
+of=qrej]            {$q_{\mathrm{acc}}$};
+       ;
+      \end{tikzpicture}}$\rangle$ }  &amp; \text{otherwise}.
+\end{cases}\]</span> Where for each Turing machine <span
+class="math inline">\(M\)</span>, we define <span
+class="math display">\[\begin{aligned}
+    M_w = ``&amp;\text{On input y} \\
+    &amp;1. \text{   Simulate $M$ on $w$.}\\
+    &amp;2. \text{   If it accepts, accept.}\\
+    &amp;3. \text{   If it rejects, reject.&quot;}
+\end{aligned}\]</span></p></li>
+</ol></li>
+<li><p><strong>Using mapping reductions</strong> (14 points): Consider
+the following computational problems we’ve discussed <span
+class="math display">\[\begin{aligned}
+A_{TM} &amp;= \{ \langle M, w \rangle \mid M \text{ is a Turing machine,
+} w \text{ is a string and $M$ accepts $w$}\} \\
+HALT_{TM} &amp;= \{ \langle M, w \rangle \mid M \text{ is a Turing
+machine, } w \text{ is a string and $M$ halts on $w$}\} \\
+E_{TM} &amp;=  \{ \langle M \rangle \mid M \text{ is a Turing machine
+and } L(M) = \emptyset\} \\
+EQ_{TM} &amp;= \{ \langle M_1, M_2 \rangle \mid M_1, M_2 \text{ are both
+Turing machines and } L(M_1) = L(M_2) \}
+\end{aligned}\]</span> and the new computational problem <span
+class="math display">\[One_{TM} = \{ \langle M \rangle \mid M \text{ is
+a Turing machine and $M$ accepts exactly one string} \}\]</span></p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) Give an example of
+a string that is an element of <span
+class="math inline">\(One_{TM}\)</span> and a string that is not an
+element <span class="math inline">\(One_{TM}\)</span> and briefly
+justify your choices.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Prove that <span
+class="math inline">\(One_{TM}\)</span> is not decidable by showing that
+<span class="math inline">\(A_{TM} \leq_m One_{TM}\)</span>.</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) Give a different
+proof that <span class="math inline">\(One_{TM}\)</span> is not
+decidable by showing that <span class="math inline">\(HALT_{TM} \leq_m
+One_{TM}\)</span>.</p></li>
+<li><p>(<span><em>Graded for completeness</em></span>) Is <span
+class="math inline">\(One_{TM}\)</span> recognizable? Justify your
+answer.</p></li>
+</ol></li>
+<li><p><strong>Examples of languages</strong> (9 points):</p>
+<p>For each part of the question, use precise mathematical notation or
+English to define your examples and then briefly justify why they
+work.</p>
+<ol>
+<li><p>(<span><em>Graded for correctness</em></span>) Two undecidable
+languages <span class="math inline">\(L_1\)</span> and <span
+class="math inline">\(L_2\)</span> over the same alphabet whose union
+<span class="math inline">\(L_1 \cup L_2\)</span> is decidable, or write
+<span><strong>NONE</strong></span> if there is no such example (and
+explain why).</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) A regular language
+<span class="math inline">\(L_3\)</span> and an unrecognizable language
+<span class="math inline">\(L_4\)</span> over the same alphabet whose
+intersection <span class="math inline">\(L_3 \cap L_4\)</span> is
+unrecognizable, or write <span><strong>NONE</strong></span> if there is
+no such example (and explain why).</p></li>
+<li><p>(<span><em>Graded for correctness</em></span>) A co-recognizable
+language <span class="math inline">\(L_5\)</span> that is NP-complete,
+or write <span><strong>NONE</strong></span> if there is no such example
+(and explain why). Recall the definition: A language <span
+class="math inline">\(L\)</span> over an alphabet <span
+class="math inline">\(\Sigma\)</span> is called
+<span><strong>co-recognizable</strong></span> if its complement, defined
+as <span class="math inline">\(\Sigma^* \setminus L  = \{
+x  \in  \Sigma^* \mid x \notin  L \}\)</span>, is
+Turing-recognizable.</p></li>
+</ol></li>
+</ol>
+<p>The CSE 105 project is designed for you to go deeper and extend your
+work on assignments and to explore an application of your choosing. The
+project is an individual assignment and has two tasks:</p>
+<p>Task 1: Implementing the construction that converts NFA to DFA,
+and</p>
+<p>Task 2: Illustrating the theorem that every regular language is
+decidable</p>
+<h3 class="unnumbered" id="what-resources-can-you-use">What resources
+can you use?</h3>
+<p>This project must be completed individually, without any help from
+other people, including the course staff (other than logistics support
+if you get stuck with screencast). You can use any of this quarter’s CSE
+105 offering (notes, readings, class videos, homework feedback). Tools
+for drawing state diagrams (like Flap.js and JFLAP) can be used to help
+draw the diagrams in the project too. These resources should be more
+than enough. If you are struggling to get started and want to look
+elsewhere online, you must acknowledge this by listing and citing any
+resources you consult (even if you do not explicitly quote them),
+including any large-language model style resources. Link directly to
+them and include the name of the author / video creator, any search
+strings or prompts you used, and the reason you consulted this
+reference.</p>
+<p>The work you submit for the project needs to be your own. Again, you
+shouldn’t need to look anywhere other than this quarter’s material and
+doing so may result in definitions or notations that conflict with our
+norms in this class so think carefully before you go down this path.</p>
+<p>If you get stuck on any part of the project, we encourage you to
+focus on communicating what you think the question might mean, including
+bringing an example from class or homework you think might be relevant,
+and include any submission any aspect where you’re unsure. Clear
+communication about these theoretical ideas and their applications ia
+one of the main goals of the project.</p>
+<p><span><strong>Submitting the project</strong></span> You will submit
+a PDF plus a video file for the first task and a PDF for the second
+task. All file submissions will be in Gradescope.</p>
+<h3 class="unnumbered" id="task-1-implementing-a-construction">Task 1:
+Implementing a construction</h3>
+<p>Nondeterminism is a useful theoretical concept because it can make
+designs simpler and more modular. However, our actual devices are
+deterministic. In this part of the project, you’ll choose a language
+that can be represented using nondeterminism in some interesting way,
+then illustrate the construction that converts NFA to DFA for this
+example.</p>
+<p>Specifically:</p>
+<ol>
+<li><p>Choose an alphabet <span class="math inline">\(\Sigma\)</span>
+for this entire first task of the project.</p></li>
+<li><p>Write a program in Java, Python, JavaScript, C++ , or another
+programming language of your choosing that takes as input a
+representation of an NFA over this alphabet and outputs a representation
+of a DFA over this alphabet that recognizes the same language. You get
+to choose the way NFA and DFA are represented, so long as it is general
+enough to represent any NFA and any DFA over this alphabet. For
+simplicity: you can restrict your attention to NFA **without spontaneous
+moves** (in other words, where the transition function has domain <span
+class="math inline">\(Q \times \Sigma\)</span> when <span
+class="math inline">\(Q\)</span> is the set of states of the NFA).
+Informally, this means that the nondeterminism is coming from there
+being zero, one, or more arrows coming out of each state for each
+character in the alphabet and there are no arrows with <span
+class="math inline">\(\varepsilon\)</span> labels.</p>
+<p>If you would like, you may use aids such as co-pilot or ChatGPT to
+help you write this program. However, you should test the code that is
+produced and be able to explain what it is doing. As a header in your
+code file, include a comment block describing any resources that were
+used to help generate your code.</p>
+<p>Whenever your program is run, it should display a representation of
+the input NFA and of the output DFA of the run.</p></li>
+<li><p>To demonstrate your program, design a NFA over <span
+class="math inline">\(\Sigma\)</span> with three states and with no
+spontaneous moves where the language of the NFA is neither <span
+class="math inline">\(\emptyset\)</span> nor <span
+class="math inline">\(\Sigma^*\)</span> and draw its state diagram. Your
+NFA should use nondeterminism in some way. In other words, the state
+diagram you draw can’t already be the state diagram of a DFA. Run your
+program with the NFA you just designed to output a representation of an
+equivalent DFA and demonstrate its design and the test case on
+video.</p></li>
+</ol>
+<p><span><strong>Checklist for submission</strong></span></p>
+<p>For this task, you will submit a PDF plus a video file.</p>
+<p>The PDF should include:</p>
+<ul>
+<li><p>Clear specification of alphabet and state diagram of chosen
+three-state NFA.</p></li>
+<li><p>Documentation for program converting NFA to DFA: include a
+description of how NFA and DFA are represented in the program and give
+instructions for running it.</p></li>
+<li><p>Printout of code for program converting NFA to DFA.</p></li>
+<li><p>Screen shots of demonstration of running your program on your
+chosen NFA, including the representation of the output DFA.</p></li>
+<li><p>Solution is typed or clearly hand drawn with precise language and
+notation for all terms.</p></li>
+</ul>
+<p>Presenting your reasoning and demonstrating it via screenshare are
+important skills that also show us a lot of your learning. Getting
+practice with this style of presentation is a good thing for you to
+learn in general and a rich way for us to assess your skills. To
+demonstrate your work, you will create a 3-5 minute screencast video
+with the following components:</p>
+<ul>
+<li><p>Start with your face and your student ID for a few seconds at the
+beginning, and introduce yourself audibly while on screen. You don’t
+have to be on camera for the rest of the video, though it’s fine if you
+are. We are looking for a brief confirmation that it’s you creating the
+video and doing the work you submitted.</p></li>
+<li><p>Present the NFA you will be working with. Your video should
+include a clear and precise explanation of why the language of this NFA
+is not empty and also not the set of all strings over <span
+class="math inline">\(\Sigma\)</span>.</p></li>
+<li><p>Show on the screen and explain the code for your program,
+including the software design choices you made (e.g. which data
+structures are you using, etc.) and any resources you used. The video
+should clearly describe which programming language was chosen for the
+implementation and gives the reasons why.</p></li>
+<li><p>Show on the screen and explain the representation of the NFA that
+you will input to the program.</p></li>
+<li><p>Demonstrate running your code on your example input. The video
+should include screencasts of running the code live. Explain why the
+output of your program is what you would expect, by connecting the
+output of the program to a DFA and discussing which strings are accepted
+/ rejected by this DFA.</p></li>
+<li><p>Logistics: video needs to load correctly, be between 3 and 5
+minutes, show your face and ID, and you introduce yourself audibly while
+on screen.</p></li>
+</ul>
+<p><span><strong>Note</strong></span>: Clarity and brevity are both
+important aspects of your video. In previous years, we’ve seen students
+speed up their videos to get below the 5 minute upper bound. This is ok
+so long as it doesn’t compromise clarity.</p>
+<h3 class="unnumbered" id="task-2-illustrating-a-theorem">Task 2:
+Illustrating a theorem</h3>
+<p>In this part of the project, you’ll choose a pattern in an
+application you care about, define it precisely, build a DFA that
+recognizes it, and then build the related Turing machine that proves
+that the language encoding this pattern is decidable.</p>
+<p>First, pick <span><strong>one</strong></span> application for your
+example. Here are some ideas to get you started - but you can choose to
+go in a different direction.</p>
+<ul>
+<li><p>Data validation for input in text files (e.g. emails with
+specific domains, dates in specific formats, PIDs in a class list,
+etc.)</p></li>
+<li><p>Finding ASCII codes for punctuation in a binary file.</p></li>
+<li><p>The CDC recommended procedure for hand washing (Refer to the
+guidelines from the CDC here <a
+href="https://www.cdc.gov/handwashing/index.html">https://www.cdc.gov/handwashing/index.html</a>
+in your explanation. You might find the first example in chapter 1 about
+automatic door controllers helpful when starting your design.)</p></li>
+<li><p>See more ideas here: <a
+href="https://theory-cs.github.io/files/practical-applications-of-theory-of-computation.pdf">https://theory-cs.github.io/files/practical-applications-of-theory-of-computation.pdf</a></p></li>
+</ul>
+<p>Then:</p>
+<ol>
+<li><p>In a paragraph or so, give the context for your chosen
+application and why you chose it.</p></li>
+<li><p>Specify the alphabet for your example and write a precise
+(mathematical and/or English) description of a set of strings over this
+alphabet that is relevant to this application, and include a sentence or
+so justifying why this set is important and relevant.</p></li>
+<li><p>Give one example of a string over this alphabet in this set and a
+string over this (same) alphabet not in this set, and explain why you
+chose these example strings.</p></li>
+<li><p>Design a DFA that recognizes this language. Clearly draw and
+label the state diagram of this DFA and briefly justify why your design
+works by describing the role of each state of the DFA and relating it to
+a plain English description of the language you picked.</p></li>
+<li><p>Use the construction in the proof that all regular languages are
+decidable (informally described in Theorem 4.1 in the book) to build a
+Turing machine that simulates your DFA. Hint: your Turing machine will
+have exactly two more states than your DFA. Draw the state diagram of
+your Turing machine.</p></li>
+<li><p>For one of the strings from step 4., draw a representation of the
+computation of your Turing machine on this string. Remember that to
+describe the computation of a Turing machine, we need to include the
+contents of the tape, the state of the machine, and the location of the
+read/write head at each step in the computation. In class we’ve drawn
+pictures to represent the configuration of the machine at each step in a
+computation. You may do so or you may choose to describe these
+configurations in words.</p></li>
+</ol>
+<p><span><strong>Checklist for submission</strong></span></p>
+<ul>
+<li><p>Solution typed or clearly hand-written/drawn with precise
+language and notation for all terms and complete, correct, and clear
+justification.</p></li>
+<li><p>Each of the six steps is complete and included in the PDF, with
+precise language and notation for all terms and complete, correct, and
+clear justification.</p></li>
+</ul>
+<h3 class="unnumbered" id="your-video">Your video:</h3>
+<p>You may produce screencasts with any software you choose. One option
+is to record yourself with Zoom; a tutorial on how to use Zoom to record
+a screencast (courtesy of Prof. Joe Politz) is here:</p>
+<p><a
+href="https://drive.google.com/open?id=1KROMAQuTCk40zwrEFotlYSJJQdcG_GUU"
+class="uri">https://drive.google.com/open?id=1KROMAQuTCk40zwrEFotlYSJJQdcG_GUU</a>.</p>
+<p>The video that was produced from that recording session in Zoom is
+here:</p>
+<p><a
+href="https://drive.google.com/open?id=1MxJN6CQcXqIbOekDYMxjh7mTt1TyRVMl"
+class="uri">https://drive.google.com/open?id=1MxJN6CQcXqIbOekDYMxjh7mTt1TyRVMl</a></p>
+<p>Please send an email to the instructors (minnes@ucsd.edu) if you have
+concerns about the video / screencast components of this project or
+cannot complete projects in this style for some reason.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This means you will get full credit so long as your
+submission demonstrates honest effort to answer the question. You will
+not be penalized for incorrect answers. To demonstrate your honest
+effort in answering the question, we expect you to include your attempt
+to answer *each* part of the question. If you get stuck with your
+attempt, you can still demonstrate your effort by explaining where you
+got stuck and what you did to try to get unstuck.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This means your solution will be evaluated not only on
+the correctness of your answers, but on your ability to present your
+ideas clearly and logically. You should explain how you arrived at your
+conclusions, using mathematically sound reasoning. Whether you use
+formal proof techniques or write a more informal argument for why
+something is true, your answers should always be well-supported. Your
+goal should be to convince the reader that your results and methods are
+sound.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>This means your solution will be evaluated not only on
+the correctness of your answers, but on your ability to present your
+ideas clearly and logically. You should explain how you arrived at your
+conclusions, using mathematically sound reasoning. Whether you use
+formal proof techniques or write a more informal argument for why
+something is true, your answers should always be well-supported. Your
+goal should be to convince the reader that your results and methods are
+sound.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This means you will get full credit so long as your
+submission demonstrates honest effort to answer the question. You will
+not be penalized for incorrect answers. To demonstrate your honest
+effort in answering the question, we expect you to include your attempt
+to answer *each* part of the question. If you get stuck with your
+attempt, you can still demonstrate your effort by explaining where you
+got stuck and what you did to try to get unstuck.<a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This means you will get full credit so long as your
+submission demonstrates honest effort to answer the question. You will
+not be penalized for incorrect answers. To demonstrate your honest
+effort in answering the question, we expect you to include your attempt
+to answer *each* part of the question. If you get stuck with your
+attempt, you can still demonstrate your effort by explaining where you
+got stuck and what you did to try to get unstuck.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>This means your solution will be evaluated not only on
+the correctness of your answers, but on your ability to present your
+ideas clearly and logically. You should explain how you arrived at your
+conclusions, using mathematically sound reasoning. Whether you use
+formal proof techniques or write a more informal argument for why
+something is true, your answers should always be well-supported. Your
+goal should be to convince the reader that your results and methods are
+sound.<a href="#fnref6" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>This means your solution will be evaluated not only on
+the correctness of your answers, but on your ability to present your
+ideas clearly and logically. You should explain how you arrived at your
+conclusions, using mathematically sound reasoning. Whether you use
+formal proof techniques or write a more informal argument for why
+something is true, your answers should always be well-supported. Your
+goal should be to convince the reader that your results and methods are
+sound.<a href="#fnref7" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>This means you will get full credit so long as your
+submission demonstrates honest effort to answer the question. You will
+not be penalized for incorrect answers. To demonstrate your honest
+effort in answering the question, we expect you to include your attempt
+to answer *each* part of the question. If you get stuck with your
+attempt, you can still demonstrate your effort by explaining where you
+got stuck and what you did to try to get unstuck.<a href="#fnref8"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>This means you will get full credit so long as your
+submission demonstrates honest effort to answer the question. You will
+not be penalized for incorrect answers. To demonstrate your honest
+effort in answering the question, we expect you to include your attempt
+to answer *each* part of the question. If you get stuck with your
+attempt, you can still demonstrate your effort by explaining where you
+got stuck and what you did to try to get unstuck.<a href="#fnref9"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>This means your solution will be evaluated not only on
+the correctness of your answers, but on your ability to present your
+ideas clearly and logically. You should explain how you arrived at your
+conclusions, using mathematically sound reasoning. Whether you use
+formal proof techniques or write a more informal argument for why
+something is true, your answers should always be well-supported. Your
+goal should be to convince the reader that your results and methods are
+sound.<a href="#fnref10" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
