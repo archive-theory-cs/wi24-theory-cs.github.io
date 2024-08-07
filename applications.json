@@ -1,0 +1,17 @@
+{
+    "Regular Languages":{
+        "Icon": "Reg"
+    },
+    "Context-free Languages":{ 
+        "Icon": "CFL"
+    },
+    "Decidable Languages":{
+        "Icon": "Dec"
+    },
+    "Undecidable Languages":{
+        "Icon": "UN"
+    },
+    "Complexity":{
+        "Icon":"CPX"
+    }
+}
